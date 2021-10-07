@@ -18,7 +18,7 @@ const FeaturedMovie = ({item}) => {
         }}>
             <div className="featured--verticalfade" >
                 <div className="featured--horizontalfade" >
-                    <div className="featured--name">{item.original_name}</div>
+                    <div className="featured--name">{item.name}</div>
                     <div className="featured--info">
                         <div className="featured--points">
                             {item.vote_average} ponto{item.vote_average !== 1 ? 's' : ''}

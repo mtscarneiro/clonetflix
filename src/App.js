@@ -36,6 +36,8 @@ const App = () => {
     return (
         <div className="page">
 
+            
+
             {featuredData &&
                 <FeaturedMovie item={featuredData} />
             }
