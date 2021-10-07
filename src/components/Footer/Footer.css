@@ -1,0 +1,28 @@
+footer {
+    height: 30%;
+    background: #141414;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer--credits {
+    display: inline-block;
+    justify-content: center;
+    margin-left: 20%;
+    margin-bottom: 2%;
+}
+
+.footer--socials {
+    display: inline-block;
+    justify-content: center;
+    margin-right: 20%;
+}
+
+.footer--github img {
+    width: 30px;
+}
+
+.footer--linkedin img {
+    width: 30px;
+}

@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import TmdbConnection from "./TmdbConnection";
+import "./App.css"
 import MovieRow from "./components/MovieRow/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie/FeaturedMovie";
 import Header from "./components/Header/Header";
-import "./App.css"
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
 
-    const [ movieList, setMovieList ] = useState([])
-    const [ featuredData, setFeatureData ] = useState(null)
-    const [ fadeToBlackHeader, setFadeToBlackHeader ] = useState(false)
+    const [movieList, setMovieList] = useState([])
+    const [featuredData, setFeatureData] = useState(null)
+    const [fadeToBlackHeader, setFadeToBlackHeader] = useState(false)
 
     useEffect(() => {
 
@@ -17,7 +18,7 @@ const App = () => {
             //Getting a movie list
             let list = await TmdbConnection.getHomeList()
             console.log(list)
-            setMovieList(list)
+             setMovieList(list)
 
 
             //Getting featured movie
@@ -35,15 +36,14 @@ const App = () => {
         loadAll()
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
         const scrollListener = () => {
-            if(window.scrollY > 10) {
+            if (window.scrollY > 10) {
                 setFadeToBlackHeader(true)
             } else {
                 setFadeToBlackHeader(false)
             }
         }
-
         window.addEventListener("scroll", scrollListener)
 
         return () => {
@@ -54,10 +54,10 @@ const App = () => {
     return (
         <div className="page">
 
-            <Header fade={fadeToBlackHeader} />
+            <Header fade={fadeToBlackHeader}/>
 
             {featuredData &&
-                <FeaturedMovie item={featuredData} />
+                <FeaturedMovie item={featuredData}/>
             }
 
 
@@ -65,9 +65,18 @@ const App = () => {
                 {movieList.map((item, key) => (
                     <MovieRow key={key}
                               title={item.title}
-                              items={item.items} />
+                              items={item.items}/>
                 ))}
             </section>
+
+            <Footer/>
+
+            {movieList.length <= 0 &&
+                <div className={"loading"}>
+                    <img src={'https://c.tenor.com/Rfyx9OkRI38AAAAC/netflix-netflix-startup.gif'} alt={"Carregando"} />
+                </div>
+            }
+
         </div>
     )
 }
