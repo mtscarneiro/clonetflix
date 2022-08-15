@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='footer--credits'>
                 <h4>Desenvolvido por Matheus Carneiro<span role='img' aria-label='desenvolvedor'>👨‍💻</span></h4>
                 Um clone do Netflix, pra quem vai todos os créditos!<br/>
-                Dados pegos do site Themoviedb.org!
+                API do Themoviedb.org!
             </div>
             <div className='footer--socials'>
                 <div className='footer--github'>

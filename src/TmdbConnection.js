@@ -7,7 +7,7 @@ const basicFetch = async (endpoint) => {
     return json
 }
 
-export default {
+const TmdbConnection = {
     getHomeList: async () => {
         return [
             {
@@ -71,3 +71,5 @@ export default {
         return info
     }
 }
+
+export default TmdbConnection
