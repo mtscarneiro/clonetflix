@@ -3,7 +3,7 @@ import "./MovieRow.css";
 import {NavigateBefore, NavigateNext} from "@material-ui/icons";
 
 
-export default ({title, items}) => {
+const MovieRow = ({title, items}) => {
 
      const [ scrollX, setScrollX ] = useState(0)
 
@@ -53,3 +53,4 @@ export default ({title, items}) => {
     )
 }
 
+export default MovieRow
